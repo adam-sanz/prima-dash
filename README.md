@@ -1,73 +1,68 @@
-# React + TypeScript + Vite
+# Prima Dash
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A user management dashboard built with React and TypeScript.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Available Scripts
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run test` - Run tests
+- `npm run lint` - Lint the code
+
+## Tech Stack
+
+### Core
+
+- **React 19** - Latest version with improved performance
+- **TypeScript** - Type safety and better developer experience
+- **Vite** - Fast build tool and dev server
+
+### Styling
+
+- **CSS Modules** - Scoped styling without conflicts
+- No external UI library - keeps bundle size small and gives full control
+
+### Testing
+
+- **Vitest** - Fast unit testing that works nicely with Vite
+- **React Testing Library** - Testing components the way users interact with them
+
+### Code Quality
+
+- **Prettier** - Consistent code formatting
+- **Husky + lint-staged** - Runs checks before commits
+
+## Why These Choices?
+
+**React 19** - Staying current with the latest features and improvements.
+
+**TypeScript** - Catches bugs early and makes refactoring easier. The type safety is especially helpful when working with API data.
+
+**CSS Modules** - Simple, performant, and no extra dependencies. Works great for component-scoped styles.
+
+**Custom hooks (useQuery, useDebounce, usePagination)** - Reusable logic without pulling in heavy libraries. Keeps the bundle small and code easier to understand.
+
+**Feature-based folder structure** - Groups related files together (components, hooks, types, tests). Makes it easier to find things as the app grows.
+
+## Features
+
+- Search and filter users
+- Pagination with responsive controls
+- User detail modal with keyboard navigation
+- Mobile-responsive design
+- Basic error handling and loading states
+
+## TODOs
+
+- Simple small caching so we're not refetching same user data unnecessarily
+- Accessibility for the user modal
+- Light/Dark theme toggle
