@@ -6,14 +6,14 @@ A user management dashboard built with React and TypeScript.
 
 ```bash
 npm install
-npm run dev
+npm start
 ```
 
 Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
 ## Available Scripts
 
-- `npm run dev` - Start development server
+- `npm start` - Start development server
 - `npm run build` - Build for production
 - `npm run test` - Run tests
 - `npm run lint` - Lint the code
