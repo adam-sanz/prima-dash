@@ -60,7 +60,7 @@ export function UserFilters({
           <label htmlFor="role-filter" className={styles.label} tabIndex={0}>
             Filter by role
           </label>
-          {(searchTerm || selectedRole !== 'all') && (
+          {searchTerm || selectedRole !== 'all' ? (
             <button
               onClick={onClearFilters}
               className={styles.clearButton}
@@ -68,7 +68,7 @@ export function UserFilters({
             >
               Clear Filters
             </button>
-          )}
+          ) : null}
         </div>
         <select
           id="role-filter"

@@ -64,7 +64,7 @@ export function Pagination({
       </button>
 
       <div className={styles.pages}>
-        {showStartEllipsis && (
+        {showStartEllipsis ? (
           <>
             <button
               className={styles.pageButton}
@@ -77,7 +77,7 @@ export function Pagination({
               ...
             </span>
           </>
-        )}
+        ) : null}
 
         {visiblePages.map((page) => (
           <button
@@ -91,7 +91,7 @@ export function Pagination({
           </button>
         ))}
 
-        {showEndEllipsis && (
+        {showEndEllipsis ? (
           <>
             <span className={styles.ellipsis} aria-hidden="true">
               ...
@@ -104,7 +104,7 @@ export function Pagination({
               {totalPages}
             </button>
           </>
-        )}
+        ) : null}
       </div>
 
       <button

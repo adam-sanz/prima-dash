@@ -48,11 +48,11 @@ export function ErrorDisplay({
       </svg>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.message}>{errorMessage}</p>
-      {onRetry && (
+      {onRetry ? (
         <button type="button" onClick={onRetry} className={styles.retryButton}>
           Try Again
         </button>
-      )}
+      ) : null}
     </div>
   );
 }
